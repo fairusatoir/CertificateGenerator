@@ -2,7 +2,7 @@ const express = require('express')
 const Participant = require('../db/participantModel')
 const router = new express.Router()
 
-router.post('/participant/:id', async (req,res)=> {
+router.post('/participant/new/:id', async (req,res)=> {
     const participant = new Participant({
         ...req.body,
         trainingId: req.params.id

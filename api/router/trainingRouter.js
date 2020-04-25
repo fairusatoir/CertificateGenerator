@@ -2,7 +2,7 @@ const express = require('express')
 const Training = require('../db/trainingModel')
 const router = new express.Router()
 
-router.post('/training', async (req,res)=> {
+router.post('/training/new', async (req,res)=> {
     const training = new Training(req.body)
 
     try {
