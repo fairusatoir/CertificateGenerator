@@ -21,13 +21,14 @@ export default {
   },
   methods: {
     createOrUpdate: async function(training) {
-      await api.updatetask(training);
-      this.flash('training updated sucessfully!', 'success');
-      this.$router.push(`/training/${training._id}`);
+      await api.updatetraining(training);
+      this.flash('Training updated sucessfully!', 'success');
+      // this.$router.push(`/training/${training._id}`);
+      this.$router.push(`/training`);
     }
   },
   async mounted() {
-    this.training = await api.gettraining(this.$route.params.id);
+    this.training = await api.getatraining(this.$route.params.id);
   }
 };
 </script>

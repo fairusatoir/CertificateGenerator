@@ -3,6 +3,7 @@ import Router from 'vue-router';
 import Training from './views/training';
 import trainingNew from './views/trainingNew.vue';
 import trainingEdit from './views/trainingEdit.vue';
+import trainingShow from './views/trainingShow';
 
 import participant from './views/participant.vue';
 import participantNew from './views/participantNew.vue';
@@ -34,6 +35,10 @@ export default new Router({
       path: '/training/edit/:id',
       name: 'edit',
       component: trainingEdit
+    },{
+      path: '/training/:id',
+      name: 'show',
+      component: trainingShow
     },
 // =======================================================    
     {

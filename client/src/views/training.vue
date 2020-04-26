@@ -9,10 +9,7 @@
                     <th> <i class="lock open icon"></i></th>
                    <th> <i class="edit icon"></i></th>
                     <th> <i class="trash icon"></i></th>
-
-
-
-          <th colspan="3"></th>
+          <!-- <th colspan="3"></th> -->
         </tr>
       </thead>
       <tr v-for="(training, i) in trainings" :key="i">

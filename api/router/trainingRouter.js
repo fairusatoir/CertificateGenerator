@@ -23,27 +23,38 @@ router.get('/training', async(req,res)=> {
     }
 })
 
-router.patch('/training/edit/:id', async(req,res)=> {
-    const updates = Object.keys(req.body)
-    const allowedUpdate = ['trainingName','certificateNumber','date','dateSign','place','theories']
-    const isValidOperation = updates.every((update) => allowedUpdate.includes(update))
-
-    if(!isValidOperation) {
-        return res.status(400).send({ error : 'Invalid Update!'})
-    }
-    
+router.get('/training/:id', async(req,res) => {
     try {
         const training = await Training.findById({_id: req.params.id})
 
+        if (!training) {
+            return res.status(404).send()
+        }
+
+        res.send(training)
+    } catch (e) {
+        res.status(500).send()
+    }
+})
+
+router.put('/training/edit/:id', async(req,res)=> {
+    
+    try {
+        const training = await Training.findOneAndUpdate({_id: req.params.id},req.body)
+              
         if (!training){
+            console.log("404 Gak")
             return res.status(404).send()
         }
 
         updates.forEach((update) => training[update] = req.body[update])
         await training.save()
         res.send('Update Complate')
+        console.log("Berhasil");
+
     } catch (e) {        
         res.status(400).send(e)
+        console.log("400");
     }
 })
 

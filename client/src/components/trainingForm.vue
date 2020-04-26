@@ -77,7 +77,7 @@ export default {
       if (this.training.trainingName === '' || this.training.certificateNumber === '' || this.training.date === '' || this.training.dateSign === '' || this.training.place === '' || this.training.theories === '') {
         this.errorsPresent = true;
       } else {
-        this.$emit('createOrUpdate', this.training);
+        this.$emit('createOrUpdate', this.training);        
       }
     }
   }

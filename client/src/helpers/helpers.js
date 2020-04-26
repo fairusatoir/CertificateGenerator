@@ -24,6 +24,10 @@ const handleError = fn => (...params) =>
   });
 
 export const api = {
+  getatraining: handleError(async id => {
+    const res = await axios.get(baseURL + id);
+    return res.data;
+  }),
   gettrainings: handleError(async () => {
     const res = await axios.get(baseURL);
     return res.data;
@@ -37,7 +41,9 @@ export const api = {
     return res.data;
   }),
   updatetraining: handleError(async payload => {
+    console.log(payload);
     const res = await axios.put(baseURLedit + payload._id, payload);
+    console.log(payload);
     return res.data;
   }),
 

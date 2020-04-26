@@ -7,14 +7,14 @@
       <div class="ui label">
       <i class="tasks icon"></i>  Training
       </div>
-      <input type="text" readonly  :value="task.trainingName"/>
+      <input type="text" readonly  :value="training.trainingName"/>
     </div>
 
      <div class="ui labeled input fluid">
       <div class="ui label">
         <i class="info circle icon"></i> date
       </div>
-      <input type="text" readonly  :value="task.date"/>
+      <input type="text" readonly  :value="training.date"/>
     </div>
     <div class="actions">
       <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">
@@ -34,7 +34,7 @@ export default {
     };
   },
   async mounted() {
-    this.training = await api.gettraining(this.$route.params.id);
+    this.training = await api.getatraining(this.$route.params.id);
   }
 };
 </script>
