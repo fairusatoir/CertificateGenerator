@@ -1,24 +1,51 @@
 <template>
   <div>
-    <h1>Show Training</h1>
-
-   
     <div class="ui labeled input fluid">
       <div class="ui label">
-      <i class="tasks icon"></i>  Training
+      <i class="folder open icon"></i>  Training
       </div>
       <input type="text" readonly  :value="training.trainingName"/>
     </div>
 
-     <div class="ui labeled input fluid">
+    <div class="ui labeled input fluid">
       <div class="ui label">
-        <i class="info circle icon"></i> date
+      <i class="tag icon"></i>  Number
+      </div>
+      <input type="text" readonly  :value="training.certificateNumber"/>
+    </div>
+
+    <div class="ui labeled input fluid">
+      <div class="ui label">
+      <i class="calendar alternate  icon"></i>  date
       </div>
       <input type="text" readonly  :value="training.date"/>
     </div>
+
+    <div class="ui labeled input fluid">
+      <div class="ui label">
+      <i class="pencil alternate icon"></i>Sign
+      </div>
+      <input type="text" readonly  :value="training.dateSign"/>
+    </div>
+
+    <div class="ui labeled input fluid">
+      <div class="ui label">
+      <i class="map marker alternate icon"></i>  Place
+      </div>
+      <input type="text" readonly  :value="training.place"/>
+    </div>
+
+     <div class="ui labeled input fluid">
+      <div class="ui label">
+        <i class="bookmark icon"></i> Theories
+      </div>
+      <input type="text" readonly  :value="training.theories"/>
+    </div>
     <div class="actions">
       <router-link :to="{ name: 'edit', params: { id: this.$route.params.id }}">
-        Edit training
+      <button class="fluid ui button">
+        <center> Edit training </center>
+      </button>
       </router-link>
     </div>
   </div>

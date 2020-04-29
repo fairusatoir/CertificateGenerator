@@ -3,13 +3,15 @@
     <div class="ui inverted segment navbar">
       <div class="ui center aligned container">
         <div class="ui large secondary inverted pointing menu compact">
+          
           <router-link to="/training" exact class="item">
            <i class="tasks icon"></i> Training
           </router-link>
-          <router-link to="/training/new" class="item">
-            <i class="plus circle icon"></i> New
-          </router-link>
-      
+
+            <router-link to="/training/new" class="item">
+              <i class="plus circle icon"></i> New Training
+            </router-link>
+                
         </div>
       </div>
     </div>
@@ -26,11 +28,20 @@
 
 <script>
 export default {
-  name: 'app'
+  name: 'app',
+  // data: function(){
+  //   return {
+  //     Statetraining: true
+  //   }
+  // }
 };
 </script>
 
 <style>
+.ui.container{
+  font-size: 17px;
+}
+
 #app > div.navbar {
   margin-bottom: 1.5em;
 }

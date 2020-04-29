@@ -21,9 +21,11 @@ export default {
   },
   methods: {
     createOrUpdate: async function(training) {
+      const theories = training.theories;
+      training.theories = theories.split(',');
+      
       await api.updatetraining(training);
       this.flash('Training updated sucessfully!', 'success');
-      // this.$router.push(`/training/${training._id}`);
       this.$router.push(`/training`);
     }
   },

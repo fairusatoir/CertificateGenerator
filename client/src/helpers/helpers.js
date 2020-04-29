@@ -15,8 +15,11 @@ const baseURL = 'http://localhost:3000/training/';
 const baseURLnew = 'http://localhost:3000/training/new/';
 const baseURLedit = 'http://localhost:3000/training/edit/';
 const baseURL2 = 'http://localhost:3000/participant/';
+const baseURL2a = 'http://localhost:3000/participant/a/';
 const baseURL2edit = 'http://localhost:3000/participant/edit/';
 const baseURL2new = 'http://localhost:3000/participant/new/';
+
+const count = 'http://localhost:3000/checkparticipant/';
 
 const handleError = fn => (...params) =>
   fn(...params).catch(error => {
@@ -29,7 +32,7 @@ export const api = {
     return res.data;
   }),
   gettrainings: handleError(async () => {
-    const res = await axios.get(baseURL);
+    const res = await axios.get(baseURL);       
     return res.data;
   }),
   deletetraining: handleError(async id => {
@@ -37,31 +40,50 @@ export const api = {
     return res.data;
   }),
   createtraining: handleError(async payload => {
+    // const theories = payload.theories;
+    // payload.theories = theories.split(',');
     const res = await axios.post(baseURLnew, payload);
     return res.data;
   }),
   updatetraining: handleError(async payload => {
-    console.log(payload);
+    // const theories = payload.theories;    
+    // payload.theories = theories.split(',');
     const res = await axios.put(baseURLedit + payload._id, payload);
-    console.log(payload);
     return res.data;
   }),
 
   //   ===================================================
 //   get all participant
-  gettraining: handleError(async id => {
+  getparticipant: handleError(async id => {
     const res = await axios.get(baseURL2 + id);
+    return res.data;
+  }),
+  getaparticipant: handleError(async id => {
+    const res = await axios.get(baseURL2a + id);
     return res.data;
   }),
   createparticipant: handleError(async (id, payload) => {
     const res = await axios.post(baseURL2new + id, payload);
     return res.data;
-  }),deleteparticipant: handleError(async id => {
+    
+  }),
+  deleteparticipant: handleError(async id => {
     const res = await axios.delete(baseURL2 + id);
     return res.data;
   }),
   updateparticipant: handleError(async payload => {
     const res = await axios.put(baseURL2edit + payload._id, payload);
+    // console.log(res.data.codeName);
+    
+    return res.data;
+  }),
+
+  // countParticippant: handleError(async payload => {
+  //   const res = await axios.get(count + payload._id);
+  //   return res.data;
+  // }),
+  checkparticipant: handleError(async (id) => {   
+    const res = await axios.get(count + id);    
     return res.data;
   }),
 };

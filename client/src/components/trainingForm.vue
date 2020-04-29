@@ -4,7 +4,7 @@
 
     <div class="ui labeled input fluid">
       <div class="ui label">
-        <i class="user icon"></i>Name
+        <i class="user icon"></i>Training
       </div>
       <input type="text" placeholder="Name Training" v-model="training.trainingName" />
     </div>
@@ -74,7 +74,7 @@ export default {
   },
   methods: {
     onSubmit: function() {
-      if (this.training.trainingName === '' || this.training.certificateNumber === '' || this.training.date === '' || this.training.dateSign === '' || this.training.place === '' || this.training.theories === '') {
+      if (this.training.trainingName === '' || this.training.certificateNumber === '' || this.training.date === '' || this.training.dateSign === '' || this.training.place === '' || this.training.theories === '') {       
         this.errorsPresent = true;
       } else {
         this.$emit('createOrUpdate', this.training);        
@@ -87,5 +87,9 @@ export default {
 <style scoped>
 .error {
   color: red;
+}
+::placeholder {
+  color: black;
+  opacity: 100; /* Firefox */
 }
 </style>

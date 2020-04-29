@@ -15,9 +15,12 @@ export default {
   },
   methods: {
     createOrUpdate: async function(training) {
-      const res = await api.createtraining(training);
+      const theories = training.theories;
+      training.theories = theories.split(',');
+
+      await api.createtraining(training);
       this.flash('training created', 'success');
-      this.$router.push(`/training/${res._id}`);
+      this.$router.push(`/training`);
     }
   }
 };
