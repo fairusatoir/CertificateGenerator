@@ -9,6 +9,8 @@ import participant from './views/participant.vue';
 import participantNew from './views/participantNew.vue';
 import participantEdit from './views/participantEdit.vue';
 
+import print from './components/print';
+
 
 Vue.use(Router);
 
@@ -42,19 +44,25 @@ export default new Router({
     },
 // =======================================================    
     {
-      path: '/participant/:id',
+      path: '/participant/:id', //id training
       name: 'Participant',
       component: participant
     },
     {
-      path: '/participant/new/:id',
+      path: '/participant/new/:id', //id training
       name: 'new-participant',
       component: participantNew
     },
     {
-      path: '/participant/edit/:id',
+      path: '/participant/edit/:id', //id participant
       name: 'edit-participant',
       component: participantEdit
+    },
+// =======================================================  
+    {
+      path: '/participant/print/:id', //id participant
+      name: 'print-participant',
+      component: print
     }
    
   ]

@@ -19,7 +19,7 @@ const baseURL2a = 'http://localhost:3000/participant/a/';
 const baseURL2edit = 'http://localhost:3000/participant/edit/';
 const baseURL2new = 'http://localhost:3000/participant/new/';
 
-const count = 'http://localhost:3000/checkparticipant/';
+// const count = 'http://localhost:3000/checkparticipant/';
 
 const handleError = fn => (...params) =>
   fn(...params).catch(error => {
@@ -75,15 +75,6 @@ export const api = {
     const res = await axios.put(baseURL2edit + payload._id, payload);
     // console.log(res.data.codeName);
     
-    return res.data;
-  }),
-
-  // countParticippant: handleError(async payload => {
-  //   const res = await axios.get(count + payload._id);
-  //   return res.data;
-  // }),
-  checkparticipant: handleError(async (id) => {   
-    const res = await axios.get(count + id);    
     return res.data;
   }),
 };

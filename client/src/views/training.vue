@@ -64,7 +64,7 @@ export default {
   },
   async mounted() {  
     const trainings = await api.gettrainings();
-    console.log(trainings);
+    // console.log(trainings);
     
     this.trainings = trainings;
   }
