@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="trianing-body">
     <h1>Training</h1>
     <table id="tasks" class="ui celled table">
       <thead>
@@ -70,3 +70,8 @@ export default {
   }
 };
 </script>
+<style scoped>
+.trianing-body{
+  margin: 0 100px;
+}
+</style>

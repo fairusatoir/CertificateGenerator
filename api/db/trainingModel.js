@@ -29,6 +29,7 @@ const taskSchema = new mongoose.Schema({
     theories:  [{
             type: String,
             required:true,
+            trim: true,
     }]
 })
 

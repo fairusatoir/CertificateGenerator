@@ -1,7 +1,6 @@
 <template>
  <form action="#" @submit.prevent="onSubmit">
     <p v-if="errorsPresent" class="error">Please fill out both fields!</p>
-
     <div class="ui labeled input fluid">
       <div class="ui label">
         <i class="user icon"></i>Training

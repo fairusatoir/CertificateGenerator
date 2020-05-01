@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>Edit Training</h1>
-    <training-form @createOrUpdate="createOrUpdate" :training=this.training></training-form>
+    <div class="ui text container">
+      <h1>Edit Training</h1>
+      <training-form @createOrUpdate="createOrUpdate" :training=this.training></training-form>
+    </div>
   </div>
 </template>
 
@@ -21,8 +23,11 @@ export default {
   },
   methods: {
     createOrUpdate: async function(training) {
-      const theories = training.theories;
-      training.theories = theories.split(',');
+      if (!(typeof(training.theories) === "object")){
+        const theories = training.theories;
+        training.theories = theories.split(',');
+      }
+      
       
       await api.updatetraining(training);
       this.flash('Training updated sucessfully!', 'success');

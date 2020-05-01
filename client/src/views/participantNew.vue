@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ui text container">
     <h1>New training</h1>
         <participant-form @createOrUpdate="createOrUpdate" ></participant-form>
   </div>

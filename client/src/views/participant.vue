@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ui text container">
     <training-show></training-show>
     <br>
       <div class="ui center aligned container">

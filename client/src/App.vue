@@ -5,18 +5,18 @@
         <div class="ui large secondary inverted pointing menu compact">
           
           <router-link to="/training" exact class="item">
-           <i class="tasks icon"></i> Training
+            <i class="tasks icon"></i> Training
           </router-link>
 
-            <router-link to="/training/new" class="item">
-              <i class="plus circle icon"></i> New Training
-            </router-link>
+          <router-link to="/training/new" class="item">
+            <i class="plus circle icon"></i> New Training
+          </router-link>
                 
         </div>
       </div>
     </div>
 
-    <div class="ui text container">
+    <div class="container-menu">
       <div class="ui one column grid">
         <div class="column">
           <router-view />
@@ -38,6 +38,10 @@ export default {
 </script>
 
 <style>
+.container-menu{
+  font-size: 17px;
+  /* margin: auto; */
+}
 .ui.container{
   font-size: 17px;
 }

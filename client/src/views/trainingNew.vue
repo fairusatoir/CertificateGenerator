@@ -1,7 +1,9 @@
 <template>
   <div>
-    <h1>New training</h1>
-    <training-form @createOrUpdate="createOrUpdate"></training-form>
+    <div class="ui text container">
+      <h1>New training</h1>
+      <training-form @createOrUpdate="createOrUpdate"></training-form>
+    </div>
   </div>
 </template>
 

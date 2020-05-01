@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="ui text container">
     <h1>Edit Participant</h1>
     <participant-form @createOrUpdate="createOrUpdate" :participant=this.participant></participant-form>
   </div>
