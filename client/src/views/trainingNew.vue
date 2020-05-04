@@ -17,8 +17,10 @@ export default {
   },
   methods: {
     createOrUpdate: async function(training) {
-      const theories = training.theories;
-      training.theories = theories.split(',');
+      if (!(typeof(training.theories) === "object")){
+        const theories = training.theories;
+        training.theories = theories.split(',');
+      }
 
       await api.createtraining(training);
       this.flash('training created', 'success');
